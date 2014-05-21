@@ -237,12 +237,10 @@ sub parse_spec($)
                         {
                             # apply typemaps
                             $return =~ s/$regex{types}/$typemap{$1}/og;
-                            $return =~ s/GLvoid/void/og;
-                            $return =~ s/void\*/void */og;
+                            $return =~ s/void\*/GLvoid */og;
                             $parms =~ s/$regex{types}/$typemap{$1}/og;
                             $parms =~ s/$regex{voidtype}/$voidtypemap{$1}/og;
-                            $parms =~ s/GLvoid/void/og;
-                            $parms =~ s/ void\* / void */og;
+                            $parms =~ s/ void\* / GLvoid */og;
                         }
                         # add to functions hash
                         $functions{$name} = {
