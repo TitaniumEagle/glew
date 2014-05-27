@@ -21,6 +21,8 @@ project "glew"
 	
 	includedirs { "include/" }
 	
+	warnings "Off" --Disable warnings, third party libs flood the log
+	
 	targetdir( LDIR_THIRDPARTY_LIB )
 	location( LDIR_THIRDPARTY_BUILD )
 
